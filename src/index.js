@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {createStore} from 'redux';
 import allReducers from './reducers';
+import { Provider } from 'react-redux';
 
 const store = createStore(
   allReducers,
@@ -13,7 +14,9 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store = {store}>
     <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
